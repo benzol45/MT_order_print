@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title>Labels 30x20</title>
+</head>
+<body>
+<div th:each="img: ${images}">
+    <img align="left" style="border: 8px solid white;" th:src="@{'data:image/png;base64,' + ${img.getImageAsBase64String()}}"/>
+
+    <span style="font-size: 73%; " th:text="${img.getNameFirst()}">назван</span>
+    <br>
+    <span style="font-size: 73%; " th:text="${img.getNameSecond()}">ие доп</span>
+    <br>
+    <font size="-2">------</font>
+    <br>
+    <span style="font-size: 65%; " th:text="${img.getSerialNumber()}">Код6зн</span>
+    <br>
+
+    <p style="page-break-after: always;"></p>
+</div>
+</body>
+</html>

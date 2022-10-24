@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Orders</title>
+</head>
+<body>
+    <a href="/">back</a>
+    <br>
+    <br>
+    <button style="font-size: large" onclick="location.href='/markCode/Order/new'" type="button">Create new</button>
+    <br>
+    <h2>Actual orders</h2>
+    <button style="font-size: medium" onclick="location.href='/markCode/Order/getActualState'" type="button">Refresh status !!! NOW NOT REALIZED !!!</button>
+    <table border="1">
+        <th>Date</th>
+        <th>State</th>
+        <th>Number</th>
+        <th>Product</th>
+        <th>Quantity</th>
+        <tr th:each="order: ${orders}">
+            <td th:text="${order.getCreateDateForForShow()}"></td>
+            <td th:text="${order.getState()}" th:style="${order.getState().toString()=='COMPLETE' ? 'color: green;' : (order.getState().toString()=='ERROR' ? 'color: red;' : 'color: black;')}"></td>
+            <td th:text="${order.getId()}" style="text-align: center"></td>
+            <td th:text="${order.getProduct().getName() + ' /' + order.getProduct().getGTIN() + '/'}"></td>
+            <td th:text="${order.getQuantity()}" style="text-align: right"></td>
+        </tr>
+    </table>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Order&Print</title>
+</head>
+<body>
+    <h1>Marking codes order & print</h1>
+    <br>
+    <h3 th:text="'Products catalog actual: ' + ${productsCatalogActualDate}"></h3>
+    <button onclick="location.href='/productsCatalog/Actualize'" type="button">Refresh NOW</button>
+    <br>
+    <br>
+    <br>
+    <br>
+    <button style="font-size: x-large" onclick="location.href='/markCode/ShowRemainder'" type="button">Show remainder</button>
+    <br>
+    <br>
+    <br>
+    <button style="font-size: x-large" onclick="location.href='/markCode/Print'" type="button">Print</button>
+    <br>
+    <br>
+    <br>
+    <button style="font-size: x-large" onclick="location.href='/markCode/Order'" type="button">Order new</button>
+</body>
+</html>

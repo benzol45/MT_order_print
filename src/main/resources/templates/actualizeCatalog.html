@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Actualize products catalog</title>
+</head>
+<body>
+    <a href="/">back</a>
+    <br>
+    <br>
+    <h2>Added products</h2>
+    <div th:each="addedProduct: ${addedProducts}">
+        <p th:text="${addedProduct.name}"/>
+    </div>
+    <br>
+    <br>
+    <h2>Updated products</h2>
+    <div th:each="updatedProduct: ${updatedProducts}">
+        <p th:text="${updatedProduct.name}"/>
+    </div>
+</body>
+</html>
